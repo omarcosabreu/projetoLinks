@@ -1,0 +1,209 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Ysabeau+SC:wght@400;500;600;700&display=swap');
+
+:root {
+  --text-color: #fff;
+  --bg-url: url("https://i.ibb.co/9ny1bKZ/bg-mobile-dark.jpg");
+  --border-color: rgb(255, 255, 255, 0.5);
+  --border-left-color: rgb(255, 255, 255, 0.9);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --bgcolor: #03e9f4;
+  --bg-shadow: #03e9f4;
+  --bg-link-color: rgb(255, 255, 255, 0.2);
+  --switch-bg-url: url('https://i.ibb.co/dWFqss9/Moon-Stars.png');
+}
+
+.light {
+  --text-color: #000;
+  --bg-url: url("https://i.ibb.co/nPHzmnJ/bg-mobile-light.jpg");
+  --border-color: rgb(0, 0, 0, 0.5);
+  --border-left-color: rgb(0, 0, 0, 0.9);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --bgcolor: rgba(250, 30, 243, 0.2);
+  --bg-shadow: rgb(118, 10, 251, 0.4);
+  --bg-link-color: rgba(250, 30, 243, 0.2);
+  --switch-bg-url: url("https://i.ibb.co/12ynfJ8/Sun.png");
+}
+
+body {
+  background: var(--bg-url) no-repeat
+    center/cover;
+}
+
+body * {
+  color: var(--text-color);
+}
+
+#container {
+  width: 100%;
+  height: 100vh;
+  max-width: 588px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+.profile {
+  font-family: "Ysabeau SC", sans-serif;
+  text-align: center;
+}
+
+.profile img {
+  width: 112px;
+  margin: 24px auto 10px;
+  border-radius: 50%;
+}
+
+.profile p {
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+/*Button Switch */
+
+#switch {
+  width: 64px;
+  position: relative;
+  margin: 15px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: white var(--switch-bg-url) no-repeat center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: slide-back 0.4s;
+}
+
+.light #switch button {
+  animation: slide-in 0.4s forwards;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  border-radius: 9999px;
+  background: var(--surface-color);
+  border: 1px solid  var(--border-color);
+}
+
+/*Menu Links*/
+
+#links {
+  display: flex;
+  flex-direction: column;
+  padding: 0 25px;
+  width: 100%;
+  margin-top: -10px;
+}
+
+#links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 24px;
+}
+
+#links ul li a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px 20px;
+  gap: 20%;
+  font-size: 1.2em;
+  font-variant: small-caps;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-left: 6px solid var(--border-left-color);
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+#links ul li a:hover {
+  background: var(--bgcolor);
+  border-radius: 8px;
+  box-shadow: 0 0 5px var(--bg-shadow), 0 0 25px var(--bg-shadow), 0 0 50px var(--bg-shadow), 0 0 100px var(--bg-shadow);
+  transition: background 0.2s;
+}
+
+#links .icon {
+  margin-left: 15%;
+  font-size: 22px;
+}
+
+/*Social Links*/
+
+#social_links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 24px;
+  margin-top: 5px;
+  font-size: 24px;
+}
+
+#social_links a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px;
+  border-radius: 50%;
+}
+
+#social_links a:hover {
+  background: var(--bg-link-color);
+  transition: background 0.2s;
+}
+
+#footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+footer span{
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 0.9em;
+  color:  rgba(114, 111, 111, 0.829);
+}
+
+@media (max-width: 430px) {
+  #links ul li a {
+  gap: 10%;
+}
+
+#links .icon {
+  margin-left: 20%;
+  font-size: 18px;
+}
+
+#social_links {
+  font-size: 30px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 12px;
+  }
+}
+
+/*animation*/
+
+@keyframes slide-in {
+  from{left: 0;}
+  to{left: 50%;}
+}
+
+@keyframes slide-back {
+  from{left: 50%;}
+  to{left: 0;}
+}
