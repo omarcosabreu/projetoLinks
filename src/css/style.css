@@ -47,6 +47,7 @@ body * {
 .profile {
   font-family: "Ysabeau SC", sans-serif;
   text-align: center;
+  margin-top: 25px;
 }
 
 .profile img {
