@@ -23,7 +23,7 @@ userProfile.innerHTML = (`
   <header class="profile">
         <img src="https://avatars.githubusercontent.com/u/155205538?v=4" alt="imagem de perfil"/>
       <div>
-        <h1>Marcos  Abreu</h1><p>Desenvolvedor Front-End</p>
+        <h1>Marcos  Abreu</h1><p>Analista de Qualidade</p>
       </div>
   </header>
 `)
